@@ -1,0 +1,27 @@
+{
+  "name": "azarin-ajor",
+  "version": "1.0.0",
+  "description": "Azarin Ajor - Frontend and Backend Monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter back start:dev\" \"pnpm --filter front dev\"",
+    "dev:front": "pnpm --filter front dev",
+    "dev:back": "pnpm --filter back dev",
+    "build": "pnpm --filter back build && pnpm --filter front build",
+    "build:front": "pnpm --filter front build",
+    "build:back": "pnpm --filter back build",
+    "start": "concurrently \"pnpm --filter back start\" \"pnpm --filter front start\"",
+    "start:front": "pnpm --filter front start",
+    "start:back": "pnpm --filter back start",
+    "install:all": "pnpm install",
+    "clean": "pnpm --filter back clean && pnpm --filter front clean",
+    "lint": "pnpm --filter back lint && pnpm --filter front lint",
+    "test": "pnpm --filter back test && pnpm --filter front test",
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:reset": "docker-compose down -v && docker-compose up -d"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

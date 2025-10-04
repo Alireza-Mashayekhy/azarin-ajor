@@ -1,0 +1,361 @@
+/* Import Persian and English fonts */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-persian: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+    --font-english: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-primary-1: var(--primary-1);
+    --color-primary-2: var(--primary-2);
+    --color-primary-3: var(--primary-3);
+    --color-primary-4: var(--primary-4);
+    --color-primary-5: var(--primary-5);
+    --color-primary-6: var(--primary-6);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+    --radius: 0.625rem;
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.141 0.005 285.823);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.141 0.005 285.823);
+    --primary: #82060e;
+    --primary-1: #fbf6ef;
+    --primary-2: #f3e8d7;
+    --primary-3: #6b4d3a;
+    --primary-4: #cb7b49;
+    --primary-5: #2b2119;
+    --primary-6: #2a2a2a;
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: #fffbeb;
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.967 0.001 286.375);
+    --muted-foreground: oklch(0.552 0.016 285.938);
+    --accent: oklch(0.967 0.001 286.375);
+    --accent-foreground: oklch(0.21 0.006 285.885);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.92 0.004 286.32);
+    --input: oklch(0.92 0.004 286.32);
+    --ring: oklch(0.705 0.015 286.067);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.141 0.005 285.823);
+    --sidebar-primary: oklch(0.21 0.006 285.885);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.967 0.001 286.375);
+    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+    --sidebar-border: oklch(0.92 0.004 286.32);
+    --sidebar-ring: oklch(0.705 0.015 286.067);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.141 0.005 285.823);
+}
+
+.dark {
+    --radius: 0.625rem;
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.141 0.005 285.823);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.141 0.005 285.823);
+    --primary: #7a3e0f;
+    --primary-1: #fbf6ef;
+    --primary-2: #f3e8d7;
+    --primary-3: #6b4d3a;
+    --primary-4: #cb7b49;
+    --primary-5: #2b2119;
+    --primary-6: #2a2a2a;
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: #fffbeb;
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.967 0.001 286.375);
+    --muted-foreground: oklch(0.552 0.016 285.938);
+    --accent: oklch(0.967 0.001 286.375);
+    --accent-foreground: oklch(0.21 0.006 285.885);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.92 0.004 286.32);
+    --input: oklch(0.92 0.004 286.32);
+    --ring: oklch(0.705 0.015 286.067);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.141 0.005 285.823);
+    --sidebar-primary: oklch(0.21 0.006 285.885);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.967 0.001 286.375);
+    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+    --sidebar-border: oklch(0.92 0.004 286.32);
+    --sidebar-ring: oklch(0.705 0.015 286.067);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.141 0.005 285.823);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) transparent;
+    }
+
+    /* اسکرول‌بار اصلی صفحه - با specificity بالا */
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    html::-webkit-scrollbar-track,
+    body::-webkit-scrollbar-track {
+        background: var(--secondary) !important;
+        border-radius: 0px !important;
+    }
+
+    html::-webkit-scrollbar-thumb,
+    body::-webkit-scrollbar-thumb {
+        background: var(--primary-3) !important;
+        border-radius: 10px !important;
+        border: 2px solid transparent !important;
+        background-clip: content-box !important;
+        transition: all 0.3s ease !important;
+    }
+
+    html::-webkit-scrollbar-thumb:hover,
+    body::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--primary-3) 80%, black) !important;
+        background-clip: content-box !important;
+    }
+
+    html::-webkit-scrollbar-corner,
+    body::-webkit-scrollbar-corner {
+        background: transparent !important;
+    }
+
+    /* اسکرول‌بار اصلی برای حالت تاریک */
+    .dark html::-webkit-scrollbar-thumb,
+    .dark body::-webkit-scrollbar-thumb {
+        background: var(--primary-3) !important;
+        background-clip: content-box !important;
+    }
+
+    .dark html::-webkit-scrollbar-thumb:hover,
+    .dark body::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--primary-3) 80%, white) !important;
+        background-clip: content-box !important;
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+}
+
+@layer utilities {
+    .custom-container {
+        @apply px-3.5 md:px-5 xl:container;
+    }
+
+    .link {
+        @apply underline hover:text-primary transition-all;
+    }
+
+    /* Font utilities for multilingual support */
+    .font-persian {
+        font-family: var(--font-persian);
+    }
+
+    .font-english {
+        font-family: var(--font-english);
+    }
+
+    /* Automatic font selection based on language */
+    .font-auto {
+        font-family: var(--font-persian), var(--font-english);
+    }
+
+    /* RTL and LTR specific font classes */
+    [dir='rtl'] .font-auto {
+        font-family: var(--font-persian);
+    }
+
+    [dir='ltr'] .font-auto {
+        font-family: var(--font-english);
+    }
+
+    /* اضافه کردن استایل‌های اسکرول‌بار */
+    .scrollbar-hide {
+        -ms-overflow-style: none; /* برای IE و Edge */
+        scrollbar-width: none; /* برای Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none; /* برای Chrome, Safari و Opera */
+    }
+
+    /* اسکرول‌بار زیبا با رنگ پرایمری */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-3) transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--primary-3);
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+        transition: all 0.3s ease;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--primary-3) 80%, black);
+        background-clip: content-box;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+    /* اسکرول‌بار برای حالت تاریک */
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--primary-3);
+        background-clip: content-box;
+    }
+
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--primary-3) 80%, white);
+        background-clip: content-box;
+    }
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.leaflet-control-container .leaflet-routing-container-hide {
+    display: none;
+}
+
+/* Fix for Leaflet marker icons in Next.js */
+.leaflet-default-icon-path {
+    background-image: url('/images/marker-icon.svg');
+}
+
+.leaflet-default-shadow-path {
+    background-image: url('/images/marker-shadow.png');
+}
+
+html[dir='rtl'] {
+    direction: rtl;
+}
+
+html[dir='rtl'] * {
+    direction: rtl;
+}
+
+html[dir='ltr'] {
+    direction: ltr;
+}
+
+html[dir='ltr'] * {
+    direction: ltr;
+}
+
+.blog-description img {
+    max-width: 100% !important;
+    max-height: 80vh !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 26px;
+    margin: 15px 0;
+}
+
+.blog-description h1 {
+    font-size: 2.5rem;
+}
+.blog-description h2 {
+    font-size: 2rem;
+}
+.blog-description h3 {
+    font-size: 1.75rem;
+}
+.blog-description h4 {
+    font-size: 1.5rem;
+}
+.blog-description h5 {
+    font-size: 1.25rem;
+}
+.blog-description h6 {
+    font-size: 1rem;
+}
+
+.blog-description table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.blog-description table th,
+.blog-description table td {
+    padding: 4px 16px;
+    border: 1px solid #ddd;
+}
