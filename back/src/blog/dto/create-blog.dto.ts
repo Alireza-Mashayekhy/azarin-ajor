@@ -41,6 +41,10 @@ export class CreateBlogDto {
   @IsDateString()
   publishedAt?: Date;
 
+  @IsOptional()
+  @IsString()
+  coverImage?: string;
+
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => BlogTranslationDto)

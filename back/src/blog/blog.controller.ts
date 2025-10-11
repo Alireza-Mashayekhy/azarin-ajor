@@ -15,14 +15,14 @@ import { JwtAuthGuard } from '../common/jwt-auth.guard';
 import { RolesGuard } from '../common/roles.guard';
 import { Roles } from '../common/roles.decorator';
 
-@Controller('blog')
+@Controller()
 export class BlogController {
   constructor(private readonly blogService: BlogService) {}
 
   // Admin: Create blog
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  @Post('admin')
+  @Post('admin/blog')
   createBlog(@Body() dto: CreateBlogDto) {
     return this.blogService.createBlog(dto);
   }
@@ -30,7 +30,7 @@ export class BlogController {
   // Admin: Update blog
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  @Put('admin/:id')
+  @Put('admin/blog/:id')
   updateBlog(@Param('id') id: string, @Body() dto: UpdateBlogDto) {
     return this.blogService.updateBlog(parseInt(id), dto);
   }
@@ -38,7 +38,7 @@ export class BlogController {
   // Admin: Delete blog
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  @Delete('admin/:id')
+  @Delete('admin/blog/:id')
   deleteBlog(@Param('id') id: string) {
     return this.blogService.deleteBlog(parseInt(id));
   }
@@ -46,7 +46,7 @@ export class BlogController {
   // Admin: List all blogs with pagination and search
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  @Get('admin')
+  @Get('admin/blog')
   listBlogs(
     @Query('page') page?: string,
     @Query('limit') limit?: string,
@@ -60,7 +60,7 @@ export class BlogController {
   // Admin: Get blog by ID (includes unpublished)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  @Get('admin/:id')
+  @Get('admin/blog/:id')
   getBlogById(@Param('id') id: string) {
     return this.blogService.getBlogById(parseInt(id));
   }
@@ -72,7 +72,7 @@ export class BlogController {
   }
 
   // Public: Get single blog by slug
-  @Get(':slug')
+  @Get('blog/:slug')
   getBlogBySlug(@Param('slug') slug: string, @Query('locale') locale?: string) {
     return this.blogService.getBlogBySlug(slug, locale);
   }

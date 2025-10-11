@@ -3,10 +3,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ColumnDef, Row } from '@tanstack/react-table';
 import { Edit, Plus, Trash2 } from 'lucide-react';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 
-import AddBlogDialog from '@/components/admin/blogs/add-blog-dialog';
 import Table from '@/components/shared/table';
 import { Button } from '@/components/ui/button';
 import { apiWithAuth } from '@/services/api';
@@ -14,10 +13,10 @@ import { Blog } from '@/types/blog';
 
 export default function BlogsPage() {
     const queryClient = useQueryClient();
-    const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+    const router = useRouter();
 
     const queryFn = async (params: { page: number; limit: number; search?: string }) => {
-        const response = await apiWithAuth.get('/blog/admin', {
+        const response = await apiWithAuth.get('/admin/blog', {
             params: {
                 page: params.page,
                 limit: params.limit,
@@ -33,7 +32,7 @@ export default function BlogsPage() {
 
     const deleteMutation = useMutation({
         mutationFn: async (id: number) => {
-            const response = await apiWithAuth.delete(`/blog/admin/${id}`);
+            const response = await apiWithAuth.delete(`/admin/blog/${id}`);
             return response.data;
         },
         onSuccess: () => {
@@ -59,7 +58,7 @@ export default function BlogsPage() {
     };
 
     const handleCreate = () => {
-        setIsAddDialogOpen(true);
+        router.push('/admin/blogs/new');
     };
 
     const columns: ColumnDef<Blog>[] = [
@@ -177,8 +176,6 @@ export default function BlogsPage() {
                 emptyMessage='No blogs found.'
                 pageSize={10}
             />
-
-            <AddBlogDialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen} />
         </div>
     );
 }

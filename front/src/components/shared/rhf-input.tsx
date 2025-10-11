@@ -1,4 +1,4 @@
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
 
 import { Label } from '@/components/shared/label';
 import { Input } from '@/components/ui/input';
@@ -12,6 +12,7 @@ export type RHFInputProps = React.ComponentProps<'input'> & {
     className?: string;
     label?: React.ReactNode;
     required?: boolean;
+    rules?: RegisterOptions;
 };
 
 export default function RHFInput({
@@ -20,6 +21,7 @@ export default function RHFInput({
     required,
     type = 'text',
     label,
+    rules,
     ...other
 }: RHFInputProps) {
     const { control } = useFormContext();
@@ -28,6 +30,7 @@ export default function RHFInput({
         <Controller
             name={name}
             control={control}
+            rules={required ? { required: `${label || name} is required`, ...rules } : rules}
             render={({ field, fieldState: { error } }) => (
                 <div className='flex flex-col gap-1'>
                     {label ? (

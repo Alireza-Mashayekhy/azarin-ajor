@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateBlogDto, UpdateBlogDto, BlogListQueryDto } from './dto';
 
@@ -8,11 +12,21 @@ export class BlogService {
 
   // Admin: Create blog
   async createBlog(dto: CreateBlogDto) {
+    // Check if slug already exists
+    const existing = await this.prisma.blogPost.findUnique({
+      where: { slug: dto.slug },
+    });
+
+    if (existing) {
+      throw new BadRequestException('Blog with this slug already exists');
+    }
+
     return this.prisma.blogPost.create({
       data: {
         slug: dto.slug,
         categoryId: dto.categoryId,
-        publishedAt: dto.publishedAt || new Date(),
+        publishedAt: dto.publishedAt || null,
+        coverImage: dto.coverImage || null,
         translations: {
           create: dto.translations,
         },
@@ -44,6 +58,7 @@ export class BlogService {
         ...(dto.slug && { slug: dto.slug }),
         ...(dto.categoryId && { categoryId: dto.categoryId }),
         ...(dto.publishedAt !== undefined && { publishedAt: dto.publishedAt }),
+        ...(dto.coverImage !== undefined && { coverImage: dto.coverImage }),
         ...(dto.translations && {
           translations: {
             create: dto.translations,

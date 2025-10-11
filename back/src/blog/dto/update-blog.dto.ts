@@ -23,6 +23,10 @@ export class UpdateBlogDto {
   publishedAt?: Date;
 
   @IsOptional()
+  @IsString()
+  coverImage?: string;
+
+  @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => BlogTranslationDto)

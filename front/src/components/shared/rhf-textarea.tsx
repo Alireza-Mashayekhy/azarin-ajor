@@ -1,4 +1,4 @@
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
 
 import { Label } from '@/components/shared/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -12,15 +12,17 @@ export type RHFTextAreaProps = React.ComponentProps<'textarea'> & {
     className?: string;
     label?: React.ReactNode;
     required?: boolean;
+    rules?: RegisterOptions;
 };
 
-export default function RHFTextArea({ name, className, label, required, ...other }: RHFTextAreaProps) {
+export default function RHFTextArea({ name, className, label, required, rules, ...other }: RHFTextAreaProps) {
     const { control } = useFormContext();
 
     return (
         <Controller
             name={name}
             control={control}
+            rules={required ? { required: `${label || name} is required`, ...rules } : rules}
             render={({ field, fieldState: { error } }) => (
                 <div className='flex flex-col gap-1'>
                     {label ? (
