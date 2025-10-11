@@ -13,3 +13,24 @@ export type Product_type = {
     createdAt: Date;
     updatedAt: Date;
 };
+
+export type Product = {
+    id: number;
+    slug: string;
+    price: number;
+    imageUrl?: string;
+    size?: string;
+    widthMm?: number;
+    heightMm?: number;
+    thicknessMm?: number;
+    unitsPerBox?: number;
+    areaPerUnit?: number;
+    translations: {
+        id: number;
+        locale: string;
+        title: string;
+        description: string;
+    }[];
+    createdAt: string;
+    updatedAt: string;
+};

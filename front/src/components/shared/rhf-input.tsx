@@ -13,6 +13,7 @@ export type RHFInputProps = React.ComponentProps<'input'> & {
     label?: React.ReactNode;
     required?: boolean;
     rules?: RegisterOptions;
+    formatNumber?: boolean; // Format numbers with thousand separators
 };
 
 export default function RHFInput({
@@ -22,9 +23,36 @@ export default function RHFInput({
     type = 'text',
     label,
     rules,
+    formatNumber = false,
     ...other
 }: RHFInputProps) {
     const { control } = useFormContext();
+
+    const formatNumberValue = (value: string | number): string => {
+        if (!formatNumber || value === '' || value === null || value === undefined)
+            return String(value || '');
+
+        // Remove any non-digit characters except decimal point
+        const cleanValue = String(value).replace(/[^\d.]/g, '');
+
+        // Split by decimal point
+        const parts = cleanValue.split('.');
+
+        // Format the integer part with thousand separators
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+        return parts.join('.');
+    };
+
+    const parseNumberValue = (value: string): number | string => {
+        if (!formatNumber || value === '') return value;
+
+        // Remove commas and parse as number
+        const cleanValue = value.replace(/,/g, '');
+        const parsed = parseFloat(cleanValue);
+
+        return isNaN(parsed) ? '' : parsed;
+    };
 
     return (
         <Controller
@@ -41,8 +69,14 @@ export default function RHFInput({
                     ) : null}
                     <Input
                         {...field}
-                        type={type}
-                        onChange={(event) => field.onChange(event.target.value)}
+                        type={formatNumber ? 'text' : type}
+                        value={formatNumber ? formatNumberValue(field.value) : field.value}
+                        onChange={(event) => {
+                            const value = formatNumber
+                                ? parseNumberValue(event.target.value)
+                                : event.target.value;
+                            field.onChange(value);
+                        }}
                         className={cn('rounded-md', className)}
                         {...other}
                         aria-invalid={Boolean(error)}

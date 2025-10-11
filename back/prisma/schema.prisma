@@ -28,7 +28,7 @@ model User {
 model Address {
   id        Int     @id @default(autoincrement())
   userId    Int
-  user      User    @relation(fields: [userId], references: [id])
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   label     String?
   country   String?
   province  String?
@@ -45,7 +45,6 @@ model Product {
   slug           String                 @unique
   price          Float
   imageUrl       String?
-  size           String?
   widthMm        Int?
   heightMm       Int?
   thicknessMm    Int?
@@ -65,7 +64,7 @@ model ProductTranslation {
   title       String
   description String
   productId   Int
-  product     Product  @relation(fields: [productId], references: [id])
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@unique([locale, productId])
 }
@@ -120,7 +119,7 @@ model BlogCategoryTranslation {
 model Cart {
   id        Int         @id @default(autoincrement())
   userId    Int         @unique
-  user      User        @relation(fields: [userId], references: [id])
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   items     CartItem[]
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt
@@ -129,9 +128,9 @@ model Cart {
 model CartItem {
   id         Int      @id @default(autoincrement())
   cartId     Int
-  cart       Cart     @relation(fields: [cartId], references: [id])
+  cart       Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
   productId  Int
-  product    Product  @relation(fields: [productId], references: [id])
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   quantity   Int      @default(1)
   unitPrice  Float?   // snapshot of price
 }
