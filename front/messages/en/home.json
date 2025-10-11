@@ -1,0 +1,51 @@
+{
+  "home": {
+    "hero": {
+      "title": "Azarin Ajar - Leading Brick Manufacturer in Iran",
+      "subtitle": "Premium Quality Building and Facade Bricks with 30 Years of Experience",
+      "description": "Leading manufacturer of building, facade, and decorative bricks using the most advanced technologies. We provide high-quality products at competitive prices for construction and infrastructure projects.",
+      "cta": "View Products",
+      "secondaryCta": "Request Free Consultation"
+    },
+    "features": {
+      "title": "Our Key Features",
+      "subtitle": "We pride ourselves on delivering exceptional service and innovative solutions for all your construction needs.",
+      "items": {
+        "quality": {
+          "title": "Quality Assurance",
+          "description": "Our rigorous quality control processes ensure that every project meets the highest standards of excellence."
+        },
+        "sustainable": {
+          "title": "Sustainable Building",
+          "description": "We integrate eco-friendly materials and energy-efficient designs to minimize environmental impact."
+        },
+        "delivery": {
+          "title": "On-Time Delivery",
+          "description": "We understand the importance of deadlines and are committed to completing projects on schedule."
+        },
+        "support": {
+          "title": "Expert Support",
+          "description": "Our team of experienced professionals provides guidance and support throughout the entire project lifecycle."
+        }
+      }
+    },
+    "stats": {
+      "items": {
+        "projects": "Projects Completed",
+        "employees": "Expert Employees",
+        "experience": "Years Experience",
+        "satisfaction": "Client Satisfaction"
+      }
+    },
+    "top_products": {
+      "title": "Top Products",
+      "subtitle": "Discover our innovative construction products designed to enhance efficiency and sustainability.",
+      "cta": "View all products"
+    },
+    "blog": {
+      "title": "Latest News",
+      "subtitle": "Stay updated with the latest news and insights from our team.",
+      "cta": "View all blogs"
+    }
+  }
+}

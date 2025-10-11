@@ -1,0 +1,29 @@
+{
+  "login": {
+    "title": "ورود به حساب کاربری",
+    "otpTitle": "تایید شماره تلفن",
+    "phoneSubtitle": "شماره تلفن همراه خود را وارد کنید",
+    "otpSubtitle": "کد تایید ارسال شده به {phoneNumber} را وارد کنید",
+    "phoneLabel": "شماره تلفن همراه",
+    "phonePlaceholder": "09123456789",
+    "sendCode": "ارسال کد تایید",
+    "sending": "در حال ارسال...",
+    "verifyAndLogin": "تایید و ورود",
+    "verifying": "در حال تایید...",
+    "resendCode": "ارسال مجدد کد",
+    "changePhone": "تغییر شماره تلفن",
+    "terms": "با ورود به حساب کاربری، شرایط و قوانین را می‌پذیرید",
+    "otpSent": "کد تایید ارسال شد",
+    "otpSendError": "خطا در ارسال کد تایید",
+    "otpResent": "کد تایید مجدداً ارسال شد",
+    "otpResendError": "خطا در ارسال مجدد کد",
+    "loginSuccess": "ورود موفقیت‌آمیز",
+    "otpVerifyError": "کد تایید اشتباه است",
+    "validation": {
+      "phoneRequired": "شماره تلفن الزامی است",
+      "phoneInvalid": "شماره تلفن معتبر نیست (مثال: 09123456789)",
+      "otpRequired": "کد تایید الزامی است",
+      "otpLength": "کد تایید باید 5 رقم باشد"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "login": {
+    "title": "Login to Account",
+    "otpTitle": "Verify Phone Number",
+    "phoneSubtitle": "Enter your mobile phone number",
+    "otpSubtitle": "Enter the verification code sent to {phoneNumber}",
+    "phoneLabel": "Mobile Phone Number",
+    "phonePlaceholder": "09123456789",
+    "sendCode": "Send Verification Code",
+    "sending": "Sending...",
+    "verifyAndLogin": "Verify and Login",
+    "verifying": "Verifying...",
+    "resendCode": "Resend Code",
+    "changePhone": "Change Phone Number",
+    "terms": "By logging in, you accept the terms and conditions",
+    "otpSent": "Verification code sent",
+    "otpSendError": "Error sending verification code",
+    "otpResent": "Verification code resent",
+    "otpResendError": "Error resending verification code",
+    "loginSuccess": "Login successful",
+    "otpVerifyError": "Wrong verification code",
+    "validation": {
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number (example: 09123456789)",
+      "otpRequired": "Verification code is required",
+      "otpLength": "Verification code must be 5 digits"
+    }
+  }
+}

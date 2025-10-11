@@ -1,0 +1,24 @@
+{
+  "Footer": {
+    "description": "We are a leading company in the field of innovative solutions and high-quality products. Our mission is to provide the best services to our customers.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contact": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Subscribe to our newsletter for the latest updates and offers",
+    "emailPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "companyName": "Azarin Ajor",
+    "allRightsReserved": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "shipping": "Shipping Info",
+    "returns": "Returns",
+    "address": "Tehran, Iran - Valiasr Street"
+  }
+}

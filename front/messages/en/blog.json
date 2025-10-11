@@ -1,0 +1,61 @@
+{
+  "blog": {
+    "title": "Azarin Ajor Blog",
+    "subtitle": "Follow our latest articles and news",
+    "description": "In the Azarin Ajor blog, read the latest news, specialized articles and practical guides in the field of information technology and digital services.",
+    "seoDescription": "Azarin Ajor Blog - Latest articles, news and specialized IT guides",
+    "seoTitle": "Information and Technology Knowledge Hub",
+    "read_more": "Read more",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All Categories",
+    "noBlog": "No articles found",
+    "tryAdjusting": "Please check back later or adjust your search",
+    "blogFound": "article found",
+    "blogsFound": "articles found",
+    "whyChooseTitle": "Why Azarin Ajor Blog?",
+    "whyChooseItems": [
+      "Specialized and up-to-date content in information technology",
+      "Practical and applicable guides for businesses",
+      "Deep analysis of the latest technology trends",
+      "Free consultation through educational articles",
+      "Real experiences from successful projects"
+    ],
+    "servicesTitle": "Consulting and Support Services",
+    "servicesDescription": "Azarin Ajor's specialist team is ready to provide consulting and specialized services in the following areas:",
+    "serviceTags": [
+      "Web Design",
+      "App Development",
+      "SEO Optimization",
+      "Technology Consulting",
+      "Technical Support",
+      "Specialized Training"
+    ],
+    "single": {
+      "backToBlogs": "Back to Blog",
+      "readTime": "Read time",
+      "minutes": "minutes",
+      "publishedOn": "Published on",
+      "author": "Author",
+      "category": "Category",
+      "tags": "Tags",
+      "shareArticle": "Share Article",
+      "relatedPosts": "Related Posts",
+      "tableOfContents": "Table of Contents",
+      "nextPost": "Next Post",
+      "prevPost": "Previous Post",
+      "comments": "Comments",
+      "leaveComment": "Leave a Comment",
+      "newsletter": "Newsletter",
+      "subscribeNewsletter": "Subscribe to Newsletter",
+      "newsletterDesc": "Get our latest articles and news",
+      "yourEmail": "Your Email",
+      "subscribe": "Subscribe",
+      "socialShare": "Share on Social Media",
+      "copyLink": "Copy Link",
+      "linkCopied": "Link Copied",
+      "aboutAuthor": "About the Author",
+      "authorBio": "Author Biography",
+      "moreFromAuthor": "More from this Author"
+    }
+  }
+}

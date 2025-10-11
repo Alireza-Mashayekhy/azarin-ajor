@@ -1,0 +1,19 @@
+{
+  "Header": {
+    "language": "Language",
+    "consultation": "Consultation",
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "projects": "Projects",
+    "products": "Products",
+    "testimonials": "Testimonials",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "Header": {
+    "language": "زبان",
+    "consultation": "درخواست مشاوره",
+    "home": "خانه",
+    "blog": "مقالات",
+    "about": "درباره ما",
+    "contact": "تماس با ما",
+    "services": "خدمات",
+    "projects": "پروژه ها",
+    "products": "محصولات",
+    "testimonials": "نظرات",
+    "theme": {
+      "light": "روشن",
+      "dark": "تاریک",
+      "system": "سیستم"
+    }
+  }
+}
