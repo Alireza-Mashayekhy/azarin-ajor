@@ -1,7 +1,6 @@
 import {
   IsString,
   IsOptional,
-  IsDateString,
   IsArray,
   ValidateNested,
   IsInt,
@@ -36,10 +35,6 @@ export class CreateBlogDto {
 
   @IsInt()
   categoryId: number;
-
-  @IsOptional()
-  @IsDateString()
-  publishedAt?: Date;
 
   @IsOptional()
   @IsString()

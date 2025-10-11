@@ -25,7 +25,7 @@ export class BlogService {
       data: {
         slug: dto.slug,
         categoryId: dto.categoryId,
-        publishedAt: dto.publishedAt || null,
+        publishedAt: new Date(),
         coverImage: dto.coverImage || null,
         translations: {
           create: dto.translations,

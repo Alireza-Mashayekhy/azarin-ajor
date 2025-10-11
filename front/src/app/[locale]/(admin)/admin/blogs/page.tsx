@@ -115,22 +115,6 @@ export default function BlogsPage() {
             }
         },
         {
-            accessorKey: 'publishedAt',
-            header: 'Status',
-            cell: ({ row }: { row: Row<Blog> }) => {
-                const publishedAt = row.getValue('publishedAt') as string | null;
-                const isPublished = publishedAt && new Date(publishedAt) <= new Date();
-                return (
-                    <div
-                        className={`px-2 py-1 w-fit rounded-full text-xs font-medium ${
-                            isPublished ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                        }`}>
-                        {isPublished ? 'Published' : 'Draft'}
-                    </div>
-                );
-            }
-        },
-        {
             id: 'actions',
             header: 'Actions',
             cell: ({ row }: { row: Row<Blog> }) => {

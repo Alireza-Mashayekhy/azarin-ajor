@@ -94,7 +94,7 @@ model BlogPostTranslation {
   metaTitle       String?
   metaDescription String?
   blogPostId      Int
-  blogPost        BlogPost  @relation(fields: [blogPostId], references: [id])
+  blogPost        BlogPost  @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
 
   @@unique([locale, blogPostId])
 }
@@ -111,7 +111,7 @@ model BlogCategoryTranslation {
   locale      String
   title       String
   categoryId  Int
-  category    BlogCategory  @relation(fields: [categoryId], references: [id])
+  category    BlogCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
   @@unique([locale, categoryId])
 }
@@ -140,11 +140,11 @@ model CartItem {
 model Favorite {
   id         Int       @id @default(autoincrement())
   userId     Int
-  user       User      @relation(fields: [userId], references: [id])
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   productId  Int?
-  product    Product?  @relation(fields: [productId], references: [id])
+  product    Product?  @relation(fields: [productId], references: [id], onDelete: Cascade)
   blogPostId Int?
-  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id])
+  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
   createdAt  DateTime  @default(now())
 
   @@unique([userId, productId])
@@ -155,13 +155,13 @@ model Favorite {
 model Comment {
   id         Int       @id @default(autoincrement())
   userId     Int
-  user       User      @relation(fields: [userId], references: [id])
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   content    String
   rating     Int?
   productId  Int?
-  product    Product?  @relation(fields: [productId], references: [id])
+  product    Product?  @relation(fields: [productId], references: [id], onDelete: Cascade)
   blogPostId Int?
-  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id])
+  blogPost   BlogPost? @relation(fields: [blogPostId], references: [id], onDelete: Cascade)
   createdAt  DateTime  @default(now())
 
   @@index([productId])
